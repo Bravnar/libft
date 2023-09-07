@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 20:58:47 by bravnar           #+#    #+#             */
-/*   Updated: 2023/08/15 08:16:47 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/07 10:29:52 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ void	*ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void    ft_putchar_fd(char c, int fd);
 void    ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
+int		ft_toupper(int c);
 
 #endif
