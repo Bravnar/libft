@@ -6,7 +6,7 @@
 /*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 20:58:47 by bravnar           #+#    #+#             */
-/*   Updated: 2023/09/07 10:29:52 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/07 10:37:47 by codespace        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void    ft_putchar_fd(char c, int fd);
 void    ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 #endif
