@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: bravnar <bravnar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 08:09:53 by codespace         #+#    #+#             */
-/*   Updated: 2023/08/15 08:20:06 by codespace        ###   ########.fr       */
+/*   Updated: 2023/09/09 08:54:20 by bravnar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while(*s)
-		write(fd, s++, 1);	
+	while (*s)
+		write(fd, s++, 1);
 }
 
 /* int	main(int ac, char **av)
