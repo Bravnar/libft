@@ -20,6 +20,8 @@ SRCS= ft_isalpha.c \
 	  ft_strchr.c \
 	  ft_strrchr.c \
 	  ft_strncmp.c \
+	  ft_memchr.c \
+	  
 	  
 
 OBJS = $(patsubst %.c,%.o,$(SRCS))
