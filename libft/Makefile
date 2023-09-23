@@ -22,7 +22,8 @@ SRCS= ft_isalpha.c \
 	  ft_strncmp.c \
 	  ft_memchr.c \
 	  ft_memcmp.c \
-	  
+	  ft_strnstr.c \
+
 
 OBJS = $(patsubst %.c,%.o,$(SRCS))
 HEADER_FILE= /libft.h
