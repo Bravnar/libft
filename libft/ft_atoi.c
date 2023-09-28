@@ -3,52 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bravnar <bravnar@student.42.fr>            +#+  +:+       +#+        */
+/*   By: smuravyev <smuravyev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 14:40:33 by bravnar           #+#    #+#             */
-/*   Updated: 2023/09/23 14:58:40 by bravnar          ###   ########.fr       */
+/*   Created: 2023/09/28 15:00:47 by smuravyev         #+#    #+#             */
+/*   Updated: 2023/09/28 15:57:28 by smuravyev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_iswhitespace(char c)
+static int	is_whitespace(char c)
 {
-	if ((c >= 9 && c <= 13) || c == ' ')
+	if ((c >= 9 && c <= 13) || c == 32)
 		return (1);
 	return (0);
 }
 
-static char	*ft_sign(char *nptr, int *sign)
-{
-	int	minus;
-
-	minus = 0;
-	while (*nptr == '-' || *nptr == '+' || ft_iswhitespace(*nptr))
-	{
-		if (*nptr == '-')
-			minus++;
-		nptr++;
-	}
-	*sign = minus % 2;
-	return (nptr);
-}
-
 int	ft_atoi(const char *nptr)
 {
-	int	num;
+	int	result;
 	int	sign;
 
-	num = 0;
-	nptr = ft_sign((char *)nptr, &sign);
-	while (*nptr == '0')
+	result = 0;
+	sign = 1;
+	while (is_whitespace(*nptr))
 		nptr++;
-	while (ft_isdigit(*nptr))
+	if (*nptr == '-' || *nptr == '+')
 	{
-		num = num * 10 + (*nptr - '0');
+		if (*nptr == '-')
+			sign = -1;
 		nptr++;
 	}
-	if (sign)
-		return (-num);
-	return (num);
+	if (!(*nptr >= '0' && *nptr <= '9') || *nptr == 0)
+		return (0);
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		result = result * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (result * sign);
 }
+
+/* #include <stdio.h>
+
+int	main(int ac, char **av)
+{
+	(void) ac;
+	int number = ft_atoi(av[1]);
+	int number_2 = atoi(av[1]);
+
+	printf("Test with ft_atoi: %d\n", number);
+	printf("Test with atoi: %d\n", number_2);
+	return (0);
+} */
