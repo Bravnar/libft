@@ -6,7 +6,7 @@
 /*   By: smuravyev <smuravyev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:23:58 by smuravyev         #+#    #+#             */
-/*   Updated: 2023/10/05 19:02:57 by smuravyev        ###   ########.fr       */
+/*   Updated: 2023/10/05 19:24:29 by smuravyev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 
 	total_len = ft_strlen(s1) + ft_strlen(s2);
 	i = 0;
+	j = 0;
 	s3 = (char *)malloc(sizeof(char) * (total_len + 1));
 	if (!s3)
 		return (NULL);
@@ -31,9 +32,20 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	}
 	while (s2[j])
 	{
-		s3[i++] = s1[j];
+		s3[i++] = s2[j];
 		j++;
 	}
 	s3[i] = '\0';
 	return (s3);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	char *s1 = "my favorite animal is";
+ 	char *s2 = " ";
+ 	char *s3 = "the nyancat";
+ 	char *res = ft_strjoin(ft_strjoin(s1, s2), s3);
+	printf("The new string is: %s\n", res);
+} */
