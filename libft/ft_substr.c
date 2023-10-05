@@ -6,7 +6,7 @@
 /*   By: smuravyev <smuravyev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:46:55 by smuravyev         #+#    #+#             */
-/*   Updated: 2023/10/04 19:11:43 by smuravyev        ###   ########.fr       */
+/*   Updated: 2023/10/05 12:37:40 by smuravyev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
-	char *substr;
+	int		i;
+	char	*substr;
 
 	i = 0;
 	substr = malloc(sizeof(char) * (len + 1));

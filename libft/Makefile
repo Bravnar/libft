@@ -27,6 +27,8 @@ SRCS= ft_isalpha.c \
 	  ft_calloc.c \
 	  ft_strdup.c \
 	  ft_putendl_fd.c \
+	  ft_substr.c \
+	  
 	  
 
 OBJS = $(patsubst %.c,%.o,$(SRCS))
