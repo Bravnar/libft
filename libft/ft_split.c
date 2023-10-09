@@ -6,7 +6,7 @@
 /*   By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:14:09 by smuravye          #+#    #+#             */
-/*   Updated: 2023/10/09 17:15:32 by smuravye         ###   ########.fr       */
+/*   Updated: 2023/10/09 17:48:38 by smuravye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,31 @@ static char	*malloc_word(char const *s, char c)
 	return (word);
 }
 
+static void	free_all(char **result[], size_t words)
+{
+	size_t	count;
+	size_t	i;
+
+	count = 0;
+	i = 0;
+	while (words > count)
+	{
+		if ((*result)[count] == NULL)
+		{
+			while (words > i)
+			{
+				if ((*result)[i])
+					free(*result[i]);
+			i++;
+			}
+			free(*result);
+			*result = NULL;
+			return ;
+		}
+		count++;
+	}
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**split_arr;
@@ -86,6 +111,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 	}
 	split_arr[i] = NULL;
+	free_all(&split_arr, count_words(s, c));
 	return (split_arr);
 }
 
