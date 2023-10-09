@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bravnar <bravnar@student.42.fr>            +#+  +:+       +#+        */
+/*   By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:45:51 by codespace         #+#    #+#             */
-/*   Updated: 2023/09/09 08:44:24 by bravnar          ###   ########.fr       */
+/*   Updated: 2023/10/09 13:17:42 by smuravye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	*ft_strrchr(const char *s, int c)
 	j = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 			j = (char *)(s + i);
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == (char)c)
 		j = (char *)(s + i);
 	return (j);
 }
