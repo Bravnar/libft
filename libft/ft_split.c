@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smuravyev <smuravyev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:14:09 by smuravye          #+#    #+#             */
-/*   Updated: 2023/10/09 17:48:38 by smuravye         ###   ########.fr       */
+/*   Updated: 2023/10/09 21:12:22 by smuravyev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static void	free_all(char **result[], size_t words)
 			{
 				if ((*result)[i])
 					free(*result[i]);
-			i++;
+				i++;
 			}
 			free(*result);
 			*result = NULL;
