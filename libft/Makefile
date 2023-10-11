@@ -33,7 +33,8 @@ SRCS= ft_isalpha.c \
 	  ft_split.c \
 	  ft_itoa.c \
 	  ft_strmapi.c \
-	  
+	  ft_striteri.c \
+
 
 
 OBJS = $(patsubst %.c,%.o,$(SRCS))
