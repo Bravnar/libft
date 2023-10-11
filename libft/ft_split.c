@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smuravyev <smuravyev@student.42.fr>        +#+  +:+       +#+        */
+/*   By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:14:09 by smuravye          #+#    #+#             */
-/*   Updated: 2023/10/09 21:12:22 by smuravyev        ###   ########.fr       */
+/*   Updated: 2023/10/11 11:20:41 by smuravye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static char	*malloc_word(char const *s, char c)
 
 	i = 0;
 	word_length = word_len(s, c);
-	word = (char *)malloc(sizeof(char) * (word_length + 1));
+	word = malloc(sizeof(char) * (word_length + 1));
 	if (!word)
 		return (NULL);
 	while (i < word_length)
