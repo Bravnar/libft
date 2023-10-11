@@ -6,7 +6,7 @@
 /*   By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 09:36:15 by smuravye          #+#    #+#             */
-/*   Updated: 2023/10/11 09:46:29 by smuravye         ###   ########.fr       */
+/*   Updated: 2023/10/11 10:40:44 by smuravye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,29 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		i++;
 	}
 	result[i] = '\0';
+	return (result);
+}
+
+/* #include <stdio.h>
+
+static char adjusted_to_upper(unsigned int index, char c)
+{
+	(void) index;
+    if (c >= 'a' && c <= 'z')
+        return c - 32;
+    return c;
 }
 
 int	main(void)
+{
+	char const *s = "Hello World!";
+	char *result = ft_strmapi(s, adjusted_to_upper);
+	if (result)
+	{
+		printf("Original: %s\n", s);
+		printf("Mapped: %s\n", result);
+		free(result);
+	}
+	return (0);
+}
+ */
