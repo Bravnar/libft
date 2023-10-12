@@ -6,7 +6,7 @@
 /*   By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:14:09 by smuravye          #+#    #+#             */
-/*   Updated: 2023/10/11 11:20:41 by smuravye         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:26:17 by smuravye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static void	free_all(char **result[], size_t words)
 			while (words > i)
 			{
 				if ((*result)[i])
-					free(*result[i]);
+					free((*result)[i]);
 				i++;
 			}
 			free(*result);
