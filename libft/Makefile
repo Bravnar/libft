@@ -35,9 +35,12 @@ SRCS= ft_isalpha.c \
 	  ft_strmapi.c \
 	  ft_striteri.c \
 
-
+BONUS_SRCS= 
 
 OBJS = $(patsubst %.c,%.o,$(SRCS))
+
+#BONUS_OBJS = $(patsubst %.c, %.o $(BONUS_SRCS))
+
 HEADER_FILE= /libft.h
 
 CFLAGS= -Wall -Werror -Wextra -I $(HEADER_FILE)
@@ -48,10 +51,13 @@ CC= cc
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $@ $^
+	ar -rcs $(NAME) $(OBJS)
 
 %.o:%.c
 	$(CC) $(CFLAGS) -c -o $@ $^
+
+#bonus: $(BONUS_OBJS)
+#	ar -rcs $(NAME) $^
 
 clean:
 	rm -rf $(OBJS)

@@ -6,7 +6,7 @@
 /*   By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 16:14:09 by smuravye          #+#    #+#             */
-/*   Updated: 2023/10/12 12:26:17 by smuravye         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:06:01 by smuravye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,28 +63,26 @@ static char	*malloc_word(char const *s, char c)
 	return (word);
 }
 
-static void	free_all(char **result[], size_t words)
+static void	free_all(char ***result, size_t words)
 {
 	size_t	count;
 	size_t	i;
 
-	count = 0;
-	i = 0;
-	while (words > count)
+	count = -1;
+	i = -1;
+	while (words > ++count)
 	{
 		if ((*result)[count] == NULL)
 		{
-			while (words > i)
+			while (words > ++i)
 			{
 				if ((*result)[i])
 					free((*result)[i]);
-				i++;
 			}
 			free(*result);
 			*result = NULL;
 			return ;
 		}
-		count++;
 	}
 }
 
@@ -92,11 +90,13 @@ char	**ft_split(char const *s, char c)
 {
 	char	**split_arr;
 	size_t	i;
+	size_t	words;
 
 	i = 0;
+	words = count_words(s, c);
 	if (s == NULL)
 		return (NULL);
-	split_arr = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	split_arr = malloc(sizeof(char *) * (words + 1));
 	if (!split_arr)
 		return (NULL);
 	while (*s)
@@ -111,7 +111,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 	}
 	split_arr[i] = NULL;
-	free_all(&split_arr, count_words(s, c));
+	free_all(&split_arr, words);
 	return (split_arr);
 }
 
@@ -125,7 +125,7 @@ int	main(int ac, char **av)
 	i = 0;
 	if (ac < 2)
 		return (0);
-	new_arr = ft_split(av[1], ' ');
+	new_arr = ft_split(av[1], 'z');
 	while (new_arr[i])
 	{
 		printf("%s\n", new_arr[i]);
@@ -133,4 +133,24 @@ int	main(int ac, char **av)
 	}
 	free(new_arr);
 	return (0);
-} */
+}
+ */
+
+/* #include <stdio.h>
+
+int 	main(void)
+{
+	char **words4 = ft_split("xxxxxxxxhello!", 'x');
+	for (int l = 0; words4[l]; l++)
+	{
+		printf("%s$\n", words4[l]);
+		free(words4[l]);
+	}
+	char **words6 = ft_split("--1-2--3---4----5-----42", '-');
+	for (int n = 0; words6[n]; n++)
+	{
+		printf("%s$\n", words6[n]);
+		free(words6[n]);
+	}
+}
+ */
