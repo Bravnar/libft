@@ -1,5 +1,4 @@
 NAME= libft.a
-
 SRCS= ft_isalpha.c \
 	  ft_isdigit.c \
 	  ft_isalnum.c \
@@ -35,34 +34,29 @@ SRCS= ft_isalpha.c \
 	  ft_strmapi.c \
 	  ft_striteri.c \
 
-BONUS_SRCS= 
+#BONUS_SRCS=	ft_lstnew.c \
+				ft_lstadd_front.c \
 
-OBJS = $(patsubst %.c,%.o,$(SRCS))
-
+OBJS = $(SRCS:.c=.o)
 #BONUS_OBJS = $(patsubst %.c, %.o $(BONUS_SRCS))
-
-HEADER_FILE= /libft.h
-
-CFLAGS= -Wall -Werror -Wextra -I $(HEADER_FILE)
+HEADER_FILE= libft.h
 CC= cc
-
-.PHONY: all clean fclean
+CFLAGS= -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	ar -rcs $(NAME) $(OBJS)
-
-%.o:%.c
-	$(CC) $(CFLAGS) -c -o $@ $^
+$(NAME): $(OBJS) $(HEADER_FILE)
+	ar rcs $(NAME) $(OBJS)
 
 #bonus: $(BONUS_OBJS)
 #	ar -rcs $(NAME) $^
 
 clean:
-	rm -rf $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re bonus
