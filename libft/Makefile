@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/10/13 10:47:49 by smuravye          #+#    #+#              #
+#    Updated: 2023/10/13 10:47:51 by smuravye         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME= libft.a
 SRCS= ft_isalpha.c \
 	  ft_isdigit.c \
@@ -34,11 +46,12 @@ SRCS= ft_isalpha.c \
 	  ft_strmapi.c \
 	  ft_striteri.c \
 
-#BONUS_SRCS=	ft_lstnew.c \
-				ft_lstadd_front.c \
+BONUS_SRCS=	ft_lstnew.c \
+			ft_lstadd_front.c \
+			ft_lstsize.c \
 
 OBJS = $(SRCS:.c=.o)
-#BONUS_OBJS = $(patsubst %.c, %.o $(BONUS_SRCS))
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 HEADER_FILE= libft.h
 CC= cc
 CFLAGS= -Wall -Werror -Wextra
@@ -48,8 +61,8 @@ all: $(NAME)
 $(NAME): $(OBJS) $(HEADER_FILE)
 	ar rcs $(NAME) $(OBJS)
 
-#bonus: $(BONUS_OBJS)
-#	ar -rcs $(NAME) $^
+bonus: $(BONUS_OBJS)
+	ar -rcs $(NAME) $(BONUS_OBJS)
 
 clean:
 	rm -f $(OBJS)
