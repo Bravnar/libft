@@ -6,7 +6,7 @@
 #    By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/13 10:47:49 by smuravye          #+#    #+#              #
-#    Updated: 2023/10/13 10:47:51 by smuravye         ###   ########.fr        #
+#    Updated: 2023/10/13 11:10:46 by smuravye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ SRCS= ft_isalpha.c \
 BONUS_SRCS=	ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
 
 OBJS = $(SRCS:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
