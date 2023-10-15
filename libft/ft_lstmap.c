@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smuravye <smuravye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: smuravyev <smuravyev@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:28:21 by smuravye          #+#    #+#             */
-/*   Updated: 2023/10/13 14:36:21 by smuravye         ###   ########.fr       */
+/*   Updated: 2023/10/15 18:45:40 by smuravyev        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static t_list	*ft_lstnew_strict(void *content)
 
 	list_item = malloc(sizeof(t_list));
 	if (!list_item)
-	{	
+	{
 		free(content);
 		return (NULL);
 	}
